@@ -1,0 +1,23 @@
+body {
+    background-color: #eeeeee;
+    padding: 10px;
+}
+
+.timer-display {
+    text-align: center;
+    font-size: 4em;
+    height: 1.5em;
+}
+
+.overrun {
+    background-color: #e6c1c7;
+}
+
+.btn-timer {
+    height: 2em;
+    font-size: 2em;
+}
+
+.mt6px {
+    margin-top: 6px;
+}

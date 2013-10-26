@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NwTimerApp">
+<head>
+    <title>NW Timer</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script type="text/javascript" src="vendor/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="vendor/buzz.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendor/angular.min.js"></script>
+    <script type="text/javascript" src="lib/app.js"></script>
+</head>
+<body>
+    <br />
+    <div class="container" ng-controller="MainCtrl">
+        <div class="row">
+            <div class="col-xs-12">
+                <form name="timer">
+                    <input type="text" name="timerDisplay"
+                           ng-class="{'overrun': isOverunning, 'form-control': true, 'timer-display': true}"
+                           ng-model="timeOnClock"
+                           ng-pattern="/^\d+[:]\d+[:]\d+$/"
+                           required
+                            />
+                    <div ng-show="timer.timerDisplay.$error.pattern"
+                           class="alert alert-danger alert-dismissable mt6px">
+                        Not a valid clock format.
+                    </div>
+                    <div ng-show="timer.timerDisplay.$error.required"
+                           class="alert alert-danger alert-dismissable mt6px">
+                        Clock time is required.
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+        <div class="row" style="text-align: center">
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-click="addTime(60)"
+                        class="btn btn-block btn-default btn-timer">+1m</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-click="addTime(30)"
+                        class="btn btn-block btn-default btn-timer">+30s</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-show="!clockIsRunning"
+                        ng-click="start()"
+                        class="btn btn-block btn-default btn-timer btn-success">Start</button>
+                <button type="button"
+                        ng-show="clockIsRunning"
+                        ng-click="stop()"
+                        class="btn btn-block btn-default btn-timer btn-danger">Stop</button>
+            </div>
+        </div>
+        <br />
+        <div class="row" style="text-align: center">
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(1)"
+                        class="btn btn-block btn-default btn-timer">1</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(2)"
+                        class="btn btn-block btn-default btn-timer">2</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(3)"
+                        class="btn btn-block btn-default btn-timer">3</button>
+            </div>
+        </div>
+        <br />
+        <div class="row" style="text-align: center">
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(4)"
+                        class="btn btn-block btn-default btn-timer">4</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(5)"
+                        class="btn btn-block btn-default btn-timer">5</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(6)"
+                        class="btn btn-block btn-default btn-timer">6</button>
+            </div>
+        </div>
+        <br />
+        <div class="row" style="text-align: center">
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(7)"
+                        class="btn btn-block btn-default btn-timer">7</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(8)"
+                        class="btn btn-block btn-default btn-timer">8</button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(9)"
+                        class="btn btn-block btn-default btn-timer">9</button>
+            </div>
+        </div>
+        <br />
+        <div class="row" style="text-align: center">
+            <div class="col-xs-4">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="addNumber(0)"
+                        class="btn btn-block btn-default btn-timer">0</button>
+            </div>
+            <div class="col-xs-8">
+                <button type="button"
+                        ng-disabled="clockIsRunning"
+                        ng-click="clear()"
+                        class="btn btn-block btn-default btn-timer btn-primary">Clear</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

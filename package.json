@@ -1,0 +1,17 @@
+{
+ "name": "nw-timer",
+ "version": "0.0.1",
+ "main": "index.html",
+ "description": "Timer application.",
+ "window": {
+     "title": "NW Timer",
+     "width": 400,
+     "height": 520,
+     "min-width": 400,
+     "max-width": 400,
+     "min-height": 520,
+     "max-height": 520,
+     "toolbar": false,
+     "frame": true
+ }
+}
