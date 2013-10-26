@@ -6,6 +6,8 @@ This is a free timer application built on Node-Webkit.
 
 I use a timer to keep track of how much time I spend on a task, or in extreme cases, when the kids get in trouble (for "timeouts").  I have the "Classic Timer" application for OSX, which is pretty good, but it lacks a couple of tiny features I wanted.  More importantly, it's not portable (my wife wanted a copy as well, and she has a PC).
 
+<img src="https://github.com/berico-rclayton/NW-Timer/blob/master/images/nw-timer.png?raw=true" alt="NW-Timer Screenshot" />
+
 ## Build & Run
 
 1.  Install [Node.js](http://nodejs.org/).
